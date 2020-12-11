@@ -1,0 +1,1 @@
+# Multiparadigmas_12_11
