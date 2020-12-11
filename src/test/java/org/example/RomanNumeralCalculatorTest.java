@@ -17,25 +17,25 @@ class RomanNumeralCalculatorTest {
     @Test
     void shouldThrowExceptionIfNumberIsHigh(){
         int highNumber = 4400;
-        Assertions.assertThrows(IllegalArgumentException.class, ()-> romanNumeralCalculator.calculate(highNumber));
+        assertThrows(IllegalArgumentException.class, ()-> romanNumeralCalculator.convertNumberToRoman(highNumber));
     }
 
     @Test
     void shouldThrowExceptionIfNumberIsNegative(){
         int lowNumber = -10;
-        Assertions.assertThrows(IllegalArgumentException.class, ()-> romanNumeralCalculator.calculate(lowNumber));
+        Assertions.assertThrows(IllegalArgumentException.class, ()-> romanNumeralCalculator.convertNumberToRoman(lowNumber));
     }
 
     @Test
     void shouldThrowExceptionIfNumberIsZero(){
         int zeroNumber = 0;
-        Assertions.assertThrows(IllegalArgumentException.class, ()-> romanNumeralCalculator.calculate(zeroNumber));
+        Assertions.assertThrows(IllegalArgumentException.class, ()-> romanNumeralCalculator.convertNumberToRoman(zeroNumber));
     }
 
     @Test
     void testNumberBetweenOneAndTen(){
         int number = 6;
-        String actual = romanNumeralCalculator.calculate(number);
+        String actual = romanNumeralCalculator.convertNumberToRoman(number);
         String expected = "VI";
         Assertions.assertEquals(expected,actual);
     }
@@ -43,7 +43,7 @@ class RomanNumeralCalculatorTest {
     @Test
     void testNumberBetweenTenAndFifty(){
         int number = 43;
-        String actual = romanNumeralCalculator.calculate(number);
+        String actual = romanNumeralCalculator.convertNumberToRoman(number);
         String expected = "XLIII";
         Assertions.assertEquals(expected,actual);
     }
@@ -51,7 +51,7 @@ class RomanNumeralCalculatorTest {
     @Test
     void testNumberBetweenFiftyAndOneHundred(){
         int number = 78;
-        String actual = romanNumeralCalculator.calculate(number);
+        String actual = romanNumeralCalculator.convertNumberToRoman(number);
         String expected = "LXXVIII";
         Assertions.assertEquals(expected,actual);
     }
@@ -59,7 +59,7 @@ class RomanNumeralCalculatorTest {
     @Test
     void testNumberBetweenOneHundredAndFiveHundred(){
         int number = 385;
-        String actual = romanNumeralCalculator.calculate(number);
+        String actual = romanNumeralCalculator.convertNumberToRoman(number);
         String expected = "CCCLXXXV";
         Assertions.assertEquals(expected,actual);
     }
@@ -67,7 +67,7 @@ class RomanNumeralCalculatorTest {
     @Test
     void testNumberBetweenFiveHundredAndOneThousand(){
         int number = 743;
-        String actual = romanNumeralCalculator.calculate(number);
+        String actual = romanNumeralCalculator.convertNumberToRoman(number);
         String expected = "DCCXLIII";
         Assertions.assertEquals(expected,actual);
     }
@@ -75,7 +75,7 @@ class RomanNumeralCalculatorTest {
     @Test
     void testNumberBetweenOneThousandAndThreeThousandNineHundredNinetyNine(){
         int number = 2785;
-        String actual = romanNumeralCalculator.calculate(number);
+        String actual = romanNumeralCalculator.convertNumberToRoman(number);
         String expected = "MMDCCLXXXV";
         Assertions.assertEquals(expected,actual);
     }

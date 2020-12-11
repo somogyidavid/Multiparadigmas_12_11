@@ -17,7 +17,7 @@ public class RomanNumeralCalculator {
         ROMAN_NUMERALS.put(1000, "M");
     }
 
-    public String calculate(int number) throws IllegalArgumentException{
+    public String convertNumberToRoman(int number) throws IllegalArgumentException{
         String romanNumber = "";
         if(number > 3999 || number < 1){
             throw new IllegalArgumentException("A szám értéke csak 1-3999 lehet!");
