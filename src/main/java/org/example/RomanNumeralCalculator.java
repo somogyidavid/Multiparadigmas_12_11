@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class RomanNumeralCalculator {
     private static final Map<Integer, String> ROMAN_NUMERALS;
+    private static final int MIN_INTEGER_VALUE = 1;
+    private static final int MAX_INTEGER_VALUE = 3999;
 
     static {
         ROMAN_NUMERALS = new HashMap<>();
@@ -19,7 +21,7 @@ public class RomanNumeralCalculator {
 
     public String convertNumberToRoman(int number) throws IllegalArgumentException{
         String romanNumber = "";
-        if(number > 3999 || number < 1){
+        if(number < MIN_INTEGER_VALUE || number > MAX_INTEGER_VALUE){
             throw new IllegalArgumentException("A szám értéke csak 1-3999 lehet!");
         }
 
